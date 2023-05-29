@@ -1,0 +1,10 @@
+.vscode
+.git
+.gitignore
+.gitattributes
+.env
+README.md
+Makefile
+Dockerfile*
+docker-compose.yml
+todo.txt

@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:15.1-alpine
+    volumes:
+      - ./db/initdb.d:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+    ports:
+      - $DB_PORT:$DB_PORT
+
+  api:
+    build: .
+    tty: true
+    stdin_open: true
+    environment:
+      - PORT=$PORT
+      - DB_DSN=host=$DB_HOST user=$DB_USER password=$DB_PASSWORD dbname=$DB_NAME port=$DB_PORT sslmode=disable
+    ports:
+      - $PORT:$PORT
+    volumes:
+      - ./:/app
+    command: go run main.go
+    depends_on:
+      - db
+
+volumes:
+  db_data:
