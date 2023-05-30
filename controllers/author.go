@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/kofiasare/book-challenge/models"
+	"github.com/kofiasare-dev/book-challenge/models"
 )
 
 func CreateAuthor(c *gin.Context) {

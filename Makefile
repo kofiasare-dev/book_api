@@ -28,4 +28,4 @@ stop:    ## Stop all services
 	@docker compose stop
 
 shell:   ## Lunch a bash shell in running api container
-	@docker compose exec api bash
+	@docker compose exec api sh

@@ -5,10 +5,10 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/kofiasare/book-challenge/controllers"
-	"github.com/kofiasare/book-challenge/db"
-	"github.com/kofiasare/book-challenge/models"
-	"github.com/kofiasare/book-challenge/utils"
+	"github.com/kofiasare-dev/book-challenge/controllers"
+	"github.com/kofiasare-dev/book-challenge/db"
+	"github.com/kofiasare-dev/book-challenge/models"
+	"github.com/kofiasare-dev/book-challenge/utils"
 )
 
 func main() {

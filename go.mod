@@ -1,4 +1,4 @@
-module github.com/kofiasare/book-challenge
+module github.com/kofiasare-dev/book-challenge
 
 go 1.19
 

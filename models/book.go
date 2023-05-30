@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/kofiasare/book-challenge/db"
+	"github.com/kofiasare-dev/book-challenge/db"
 )
 
 type (
