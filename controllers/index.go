@@ -27,7 +27,7 @@ func RegisterUser(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"user": user})
+	c.JSON(http.StatusCreated, gin.H{"user": user})
 }
 
 func LoginUser(c *gin.Context) {
@@ -57,5 +57,4 @@ func LoginUser(c *gin.Context) {
 
 	c.Writer.Header().Add("Authorization", token)
 	c.Writer.WriteHeader(http.StatusNoContent)
-
 }
