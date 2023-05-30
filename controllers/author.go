@@ -21,5 +21,4 @@ func CreateAuthor(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"author": author})
-
 }
