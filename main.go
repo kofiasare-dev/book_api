@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/kofiasare/book-challenge/controllers"
 	"github.com/kofiasare/book-challenge/db"
@@ -19,7 +20,7 @@ func main() {
 	models := []interface{}{&models.User{}, &models.Author{}, &models.Book{}}
 
 	// migrate models
-	pg.Migrator().DropTable(models...)
+	// pg.Migrator().DropTable(models...)
 	pg.AutoMigrate(models...)
 
 	r.GET("/", controllers.Root)
@@ -34,5 +35,6 @@ func main() {
 
 	defer pg.Close()
 
+	r.Use(cors.Default())
 	r.Run(":" + os.Getenv("PORT"))
 }
